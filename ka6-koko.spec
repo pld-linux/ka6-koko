@@ -8,33 +8,38 @@
 Summary:	An image viewer
 Name:		ka6-%{kaname}
 Version:	25.04.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	211ad78278e965a924b1e2938e59c13b
 Source1:	http://download.geonames.org/export/dump/cities1000.zip
+# Source1-md5:	acc18be5e936cca301ed70c84e94a6f7
 Source2:	http://download.geonames.org/export/dump/admin1CodesASCII.txt
+# Source2-md5:	627087cc2bfb2296403054203a08b474
 Source3:	http://download.geonames.org/export/dump/admin2Codes.txt
+# Source3-md5:	05fd178e056c19b4aaa4403623f9b075
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Quick-devel
 BuildRequires:	cmake >= 3.20
+BuildRequires:	exiv2-devel >= 0.21
 BuildRequires:	gettext-tools
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf6-ki18n-devel >= %{kframever}
-BuildRequires:	kf6-kdeclarative-devel >= %{kframever}
 BuildRequires:	kf6-kconfig-devel >= %{kframever}
 BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kio-devel >= %{kframever}
-BuildRequires:	kf6-kguiaddons-devel >= %{kframever}
 BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf6-knotifications-devel >= %{kframever}
-BuildRequires:	kf6-kfilemetadata-devel >= %{kframever}
 BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
-BuildRequires:	exiv2-devel >= 0.21
-BuildRequires:	kquickimageeditor-devel
-BuildRequires:	Qt6Quick-devel
+BuildRequires:	kf6-kdeclarative-devel >= %{kframever}
+BuildRequires:	kf6-kfilemetadata-devel >= %{kframever}
+BuildRequires:	kf6-kguiaddons-devel >= %{kframever}
+BuildRequires:	kf6-ki18n-devel >= %{kframever}
+BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kirigami-addons-devel
+BuildRequires:	kf6-kirigami-devel >= %{kframever}
+BuildRequires:	kf6-knotifications-devel >= %{kframever}
+BuildRequires:	kf6-purpose-devel >= %{kframever}
+BuildRequires:	kquickimageeditor-devel
 BuildRequires:	ninja
 BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
