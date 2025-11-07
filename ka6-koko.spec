@@ -14,11 +14,11 @@ Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	eb5cf326d0fdbebb9b4dc1bc73ed01f8
 Source1:	http://download.geonames.org/export/dump/cities1000.zip
-# Source1-md5:	70ffece1fb6fed2dca295a25c707e98e
+# Source1-md5:	17673c7d80586ac57a82f0f3adea4e31
 Source2:	http://download.geonames.org/export/dump/admin1CodesASCII.txt
-# Source2-md5:	4484e5151cade39765ab0db9fd3865ce
+# Source2-md5:	5767124c80d81c3b9040ad592fcb56c5
 Source3:	http://download.geonames.org/export/dump/admin2Codes.txt
-# Source3-md5:	638dfbb2716edf9eb325a5751e631656
+# Source3-md5:	73307f36b6f26f50f2f09374d3940c3f
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel
