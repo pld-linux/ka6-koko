@@ -1,24 +1,24 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.12.0
+%define		kdeappsver	25.12.1
 %define		qtver		6.8.0
 %define		kframever	6.13.0
 %define		kaname		koko
 Summary:	An image viewer
 Name:		ka6-%{kaname}
-Version:	25.12.0
+Version:	25.12.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	20f1b544311ce875126952351d769101
+# Source0-md5:	bdedae51494ecab5135ba80f27c1a318
 Source1:	http://download.geonames.org/export/dump/cities1000.zip
-# Source1-md5:	8b30822b15e726c1f48d89e58f760b42
+# Source1-md5:	70ffece1fb6fed2dca295a25c707e98e
 Source2:	http://download.geonames.org/export/dump/admin1CodesASCII.txt
-# Source2-md5:	02dc22e09c3849fc7abd3aacf5f9e0a6
+# Source2-md5:	4484e5151cade39765ab0db9fd3865ce
 Source3:	http://download.geonames.org/export/dump/admin2Codes.txt
-# Source3-md5:	c7b5aebf8de9a19ede8fef1bb7dbed0a
+# Source3-md5:	638dfbb2716edf9eb325a5751e631656
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel
@@ -45,13 +45,26 @@ BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires(post,postun):	desktop-file-utils
+Requires:	%{name}-data = %{version}-%{release}
 %requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Koko is an image viewer designed for desktop and touch devices.
+
+%package data
+Summary:	Data files for %{kaname}
+Summary(pl.UTF-8):	Dane dla %{kaname}
+Group:		X11/Applications
+Requires(post,postun):	desktop-file-utils
+BuildArch:	noarch
+
+%description data
+Data files for koko.
+
+%description data -l pl.UTF-8
+Dane dla koko.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -87,16 +100,19 @@ rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/{sr,zh_CN}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
+%post data
 %update_desktop_database_post
 
-%postun
+%postun data
 %update_desktop_database_postun
 
-%files -f %{kaname}.lang
+%files
 %defattr(644,root,root,755)
 %doc README.md
 %attr(755,root,root) %{_bindir}/koko
+
+%files data -f %{kaname}.lang
+%defattr(644,root,root,755)
 %{_desktopdir}/org.kde.koko.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.kde.koko.svg
 %{_datadir}/knotifications6/koko.notifyrc
