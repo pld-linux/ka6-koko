@@ -1,24 +1,24 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.12.1
+%define		kdeappsver	25.12.2
 %define		qtver		6.8.0
 %define		kframever	6.13.0
 %define		kaname		koko
 Summary:	An image viewer
 Name:		ka6-%{kaname}
-Version:	25.12.1
-Release:	2
+Version:	25.12.2
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bdedae51494ecab5135ba80f27c1a318
+# Source0-md5:	4284960017d9bafcdc16d02ead7f9b50
 Source1:	http://download.geonames.org/export/dump/cities1000.zip
-# Source1-md5:	046e8eba5f46f2b26c3786bd69b68cd5
+# Source1-md5:	4a63b72b407409b8dd74013033ae3e91
 Source2:	http://download.geonames.org/export/dump/admin1CodesASCII.txt
 # Source2-md5:	fe7f7b707d81600f67cd0c1f66bc3f7a
 Source3:	http://download.geonames.org/export/dump/admin2Codes.txt
-# Source3-md5:	c9aa92c20f2bd7f34f8353aaf7fb254a
+# Source3-md5:	2735856996b31460c5e091b8f5bbc684
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel
