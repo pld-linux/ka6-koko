@@ -6,6 +6,7 @@
 %define		kframever	6.13.0
 %define		kaname		koko
 Summary:	An image viewer
+Summary(pl.UTF-8):	Przeglądarka obrazków
 Name:		ka6-%{kaname}
 Version:	26.04.1
 Release:	1
@@ -52,6 +53,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Koko is an image viewer designed for desktop and touch devices.
+
+%description -l pl.UTF-8
+Koko jest przeglądarką obrazków zaprojektowaną dla desktopa i urządzeń
+dotykowych.
 
 %package data
 Summary:	Data files for %{kaname}
