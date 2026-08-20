@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.3
+%define		kdeappsver	26.08.0
 %define		qtver		6.8.0
 %define		kframever	6.13.0
 %define		kaname		koko
 Summary:	An image viewer
 Summary(pl.UTF-8):	Przeglądarka obrazków
 Name:		ka6-%{kaname}
-Version:	26.04.3
+Version:	26.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2e2a473fef56ded70473993f60c044fc
+# Source0-md5:	27b9c6029d6aa1e95f37d75deb5d7d6d
 Source1:	http://download.geonames.org/export/dump/cities1000.zip
 # Source1-md5:	4a63b72b407409b8dd74013033ae3e91
 Source2:	http://download.geonames.org/export/dump/admin1CodesASCII.txt
@@ -37,6 +37,7 @@ BuildRequires:	kf6-kguiaddons-devel >= %{kframever}
 BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kirigami-addons-devel
+BuildRequires:	kf6-kirigami-app-components-devel >= 1.0.2
 BuildRequires:	kf6-kirigami-devel >= %{kframever}
 BuildRequires:	kf6-knotifications-devel >= %{kframever}
 BuildRequires:	kf6-purpose-devel >= %{kframever}
