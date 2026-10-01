@@ -37,7 +37,7 @@ BuildRequires:	kf6-kguiaddons-devel >= %{kframever}
 BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kirigami-addons-devel
-BuildRequires:	kf6-kirigami-app-components-devel >= 1.0.2
+#BuildRequires:	kf6-kirigami-app-components-devel >= 1.0.2
 BuildRequires:	kf6-kirigami-devel >= %{kframever}
 BuildRequires:	kf6-knotifications-devel >= %{kframever}
 BuildRequires:	kf6-purpose-devel >= %{kframever}
